@@ -60,6 +60,10 @@ export default function Join() {
         navigate('/home');
     };
 
+    const handleloginClick = () => {
+        navigate('/login');
+    };
+
     return (
         <div className="join-container">
             <h2>회원가입 페이지입니다.</h2>
@@ -120,6 +124,7 @@ export default function Join() {
                 </div>
 
                 <button type="submit" className="join-button">회원가입</button>
+                <button type="button" className="login-button" onClick={handleloginClick}>로그인</button>
                 <button type="button" className="home-button" onClick={handleHomeClick}>홈페이지</button>
             </form>
         </div>

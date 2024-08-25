@@ -71,3 +71,13 @@ button#home:hover {
     background-color: #e0e0e0; /* 홈페이지 버튼 호버 시 색상: 약간 어두운 연한 회색 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+button#join {
+    background-color: #f0f0f0; /* 회원가입 버튼 배경색: 아주 연한 회색 */
+    color: #333; /* 회원가입 버튼 텍스트 색상: 검정색 */
+}
+
+button#join:hover {
+    background-color: #e0e0e0; /* 회원가입 버튼 호버 시 색상: 약간 어두운 연한 회색 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -54,6 +54,11 @@ export default function Login() {
         navigate('/home');
     };
 
+    const joinButtonClick = (e) => {
+        e.preventDefault();
+        navigate('/join');
+    };
+
     return (
         <div className="login-container">
             <h2>로그인 페이지입니다.</h2>
@@ -84,6 +89,13 @@ export default function Login() {
 
                 <button type="submit">로그인</button>
             </form>
+            <button 
+                id="join" 
+                className="btn" 
+                onClick={joinButtonClick}
+            >
+                회원가입
+            </button>
             <button 
                 id="home" 
                 className="btn" 
