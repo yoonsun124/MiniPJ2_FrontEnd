@@ -123,9 +123,19 @@ export default function Join() {
                     {errors.email && <span className="error-message">{errors.email}</span>}
                 </div>
 
-                <button type="submit" className="join-button">회원가입</button>
-                <button type="button" className="login-button" onClick={handleloginClick}>로그인</button>
-                <button type="button" className="home-button" onClick={handleHomeClick}>홈페이지</button>
+                <button type="submit" className="join-button">Sign Up</button>
+                <button type="button" className="home-button" onClick={handleHomeClick}>Home</button>
+                
+                <div className="login-container">
+                <span>이미 회원이신가요?</span>
+                <button 
+                type="button" 
+                className="login-button" 
+                onClick={handleloginClick}
+                >
+                Sign In
+                </button>
+             </div>
             </form>
         </div>
     );

@@ -61,48 +61,51 @@ export default function Login() {
 
     return (
         <div className="login-container">
-            <h2>로그인 페이지입니다.</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <input 
-                        type="text" 
-                        name="username" 
-                        placeholder="ID를 입력하세요." 
-                        value={username} 
-                        onChange={(e) => setUsername(e.target.value)} 
-                    />
-                    {/* 아이디 입력 필드 아래 오류 메시지 */}
-                    {errors.username && <span className="error-message">{errors.username}</span>}
-                </div>
+        <h2>로그인 페이지입니다.</h2>
+        <form onSubmit={handleSubmit}>
+            <div className="form-group">
+                <input 
+                    type="text" 
+                    name="username" 
+                    placeholder="ID를 입력하세요." 
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
+                />
+                {errors.username && <span className="error-message">{errors.username}</span>}
+            </div>
 
-                <div className="form-group">
-                    <input 
-                        type="password" 
-                        name="password" 
-                        placeholder="패스워드를 입력하세요." 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                    />
-                    {/* 비밀번호 입력 필드 아래 오류 메시지 */}
-                    {errors.password && <span className="error-message">{errors.password}</span>}
-                </div>
+            <div className="form-group">
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="패스워드를 입력하세요." 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                />
+                {errors.password && <span className="error-message">{errors.password}</span>}
+            </div>            
 
-                <button type="submit">로그인</button>
-            </form>
+            <button type="submit" className="login-button2">Sign In</button>      
             <button 
-                id="join" 
-                className="btn" 
+                    type="button" 
+                    id="home" 
+                    className="home-button" 
+                    onClick={homeButtonClick}
+                >
+                    Home
+                </button>
+                
+                <div className="footer-container">
+            <span>회원이 아니신가요?</span>
+            <button 
+                type="button" 
+                className="join-button2" 
                 onClick={joinButtonClick}
             >
-                회원가입
+                Sign Up
             </button>
-            <button 
-                id="home" 
-                className="btn" 
-                onClick={homeButtonClick}
-            >
-                홈페이지로
-            </button>
+            </div>
+        </form>
         </div>
     );
 }

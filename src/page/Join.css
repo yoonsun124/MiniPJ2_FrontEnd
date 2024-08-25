@@ -63,13 +63,13 @@ button {
 }
 
 .join-button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #f1f1f1;
+    color: #333;
     margin-right: 10px;
 }
 
 .join-button:hover {
-    background-color: #0056b3;
+    background-color: #e0e0e0;
 }
 
 .home-button {
@@ -81,14 +81,39 @@ button {
     background-color: #e0e0e0;
 }
 
+.login-container {
+    display: flex;
+    margin-top: 10px;;
+    align-items: center; /* 수직 정렬 */
+    gap: 5px; /* 문구와 버튼 사이의 간격 */
+    font-size: 14px; /* 작은 글씨 크기 */
+    color: #333; /* 기본 텍스트 색상 */
+    white-space: nowrap; /* 줄 바꿈 방지 */
+}
+
+.login-container span {
+    line-height: 1.5; /* 텍스트의 줄 높이 조정 */
+}
+
 .login-button {
-    background-color: #f1f1f1;
-    color: #333;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: none; /* 배경 박스를 없앰 */
+    color: #007bff; /* 파란색 텍스트 */
+    text-decoration: none; /* 밑줄 제거 */
+    line-height: 1.5; /* 버튼의 줄 높이 조정 */
+    white-space: nowrap; /* 줄 바꿈 방지 */
 }
 
 .login-button:hover {
-    background-color: #e0e0e0;
+    color: #66b3ff; /* 연한 하늘색으로 변경 */
+    cursor: pointer; /* 마우스 포인터가 손 모양으로 변경 */
 }
+
+
 
 /* 모바일 대응 */
 @media (max-width: 600px) {
