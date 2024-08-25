@@ -1,6 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";						
-import { Link, Route, Routes } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 
 import Login from "./page/Login";
 import Logout from './page/Logout';
@@ -14,24 +13,23 @@ import Detail from "./page/Detail";
 import ProtectedRoute from './page/ProtectedRoute';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+    const isLoggedIn = !!localStorage.getItem('token'); // 인증 여부 확인
 
-  // 사용자가 로그인되어 있는지 확인하기 위해 useEffect를 사용
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);  // 토큰이 존재하면 로그인된 것으로 간주
-  }, []);
+    // 로그인 페이지, 회원가입 페이지에서는 버튼을 숨기기
+    const showAuthButtons = location.pathname !== '/login' && location.pathname !== '/join';
 
-  return (
- 
-    <>
-      <nav>
-        {isLoggedIn ? (
-          <Link to="/logout"><button>Logout</button></Link>
-        ) : (
-          <Link to="/login"><button>Login</button></Link>
-        )}
-      </nav>
+    return (
+        <>
+            {showAuthButtons && (
+                <nav>
+                    {isLoggedIn ? (
+                        <Link to="/logout"><button>Logout</button></Link>
+                    ) : (
+                        <Link to="/login"><button>Login</button></Link>
+                    )}
+                </nav>
+            )}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Home />} />

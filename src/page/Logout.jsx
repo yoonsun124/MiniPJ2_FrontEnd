@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../axiosInstance'; // axiosInstance의 경로를 적절히 수정하세요
+import axiosInstance from '../axiosInstance';
 
 export default function Logout() {
     const navigate = useNavigate();
